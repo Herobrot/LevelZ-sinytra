@@ -29,6 +29,7 @@
     "item.CrossbowItemMixin",
     "item.EquipmentMixin",
     "item.ItemStackServerMixin",
+    "item.ItemStackServerConnectorMixin",
     "item.MiningToolItemMixin",
     "item.PotionItemMixin",
     "item.SwordItemMixin",

@@ -1,6 +1,5 @@
 package net.levelz.mixin.misc;
 
-import com.llamalad7.mixinextras.sugar.Local;
 import net.levelz.access.LevelManagerAccess;
 import net.levelz.level.LevelManager;
 import net.minecraft.enchantment.Enchantment;
@@ -24,6 +23,7 @@ import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.ModifyVariable;
+import org.spongepowered.asm.mixin.injection.Redirect;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 import java.util.ArrayList;
@@ -84,11 +84,26 @@ public abstract class EnchantmentScreenHandlerMixin {
     }
 
 
-    @Inject(method = "method_17411", at = @At(value = "INVOKE", target = "Ljava/util/List;isEmpty()Z"))
-    private void method_17411Mixin(ItemStack itemStack, World world, BlockPos pos, CallbackInfo ci, @Local(ordinal = 1) int j, @Local List<EnchantmentLevelEntry> list) {
-        if (list.isEmpty()) {
-            this.enchantmentPower[j] = 0;
+    @Unique
+    private int currentSlotIndex = 0;
+
+    @Inject(method = "method_17411", at = @At("HEAD"))
+    private void method_17411HeadMixin(ItemStack itemStack, World world, BlockPos pos, CallbackInfo ci) {
+        // Track which slot is being processed (0, 1, or 2)
+        // Reset to 0 when we've processed all 3 slots
+        if (currentSlotIndex > 2) {
+            currentSlotIndex = 0;
         }
+    }
+
+    @Redirect(method = "method_17411", at = @At(value = "INVOKE", target = "Ljava/util/List;isEmpty()Z"))
+    private boolean method_17411IsEmptyRedirect(List<?> list) {
+        boolean isEmpty = list.isEmpty();
+        if (isEmpty && currentSlotIndex >= 0 && currentSlotIndex < 3) {
+            this.enchantmentPower[currentSlotIndex] = 0;
+        }
+        currentSlotIndex++;
+        return isEmpty;
     }
 
 }
