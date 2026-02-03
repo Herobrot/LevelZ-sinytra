@@ -37,6 +37,18 @@ public class CompatInit {
                 }
             }
         }
+
+        if (FabricLoader.getInstance().isModLoaded("spell_power")) {
+            try {
+                initSpellPower();
+                System.out.println("[LevelZ] Spell Power compatibility initialized successfully");
+            } catch (Exception e) {
+                System.out.println("[LevelZ] Spell Power detected but compatibility failed: " + e.getMessage());
+                e.printStackTrace();
+            }
+        } else {
+            System.out.println("[LevelZ] Spell Power not detected, compatibility disabled");
+        }
     }
 
     private static void initTreeChopFabric() {
@@ -108,7 +120,20 @@ public class CompatInit {
         }
     }
 
-    @SuppressWarnings({"unchecked", "rawtypes"})
+    private static void initSpellPower() {
+        try {
+            // Verificar que las clases necesarias existan
+            Class.forName("net.spell_power.api.SpellSchools");
+            Class.forName("net.spell_power.api.SpellPowerMechanics");
+
+            // Si llegamos aquí, el mod está disponible y es compatible
+            System.out.println("[LevelZ] Spell Power API classes found and compatible");
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException("Spell Power API classes not found", e);
+        }
+    }
+
+    @SuppressWarnings({"rawtypes"})
     private static Object createTypedConsumer(Class<?> eventClass, TreeChopForgeCompat handler) {
         return (java.util.function.Consumer) (event) -> handler.onStartChop(event);
     }

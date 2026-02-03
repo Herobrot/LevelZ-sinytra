@@ -114,6 +114,13 @@ public abstract class PlayerEntityMixin extends LivingEntity implements LevelMan
         BonusHelper.foodIncreasionBonus(this.playerEntity, stack);
     }
 
+    @Inject(method = "tick", at = @At("TAIL"))
+    private void tickSpellPowerMixin(CallbackInfo ci) {
+        if (!this.getWorld().isClient && this.age % 20 == 0) { // Cada segundo
+            BonusHelper.applySpellPowerBonuses(this.playerEntity);
+        }
+    }
+
     @Shadow
     public abstract ItemStack getWeaponStack();
 

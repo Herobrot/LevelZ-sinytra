@@ -82,8 +82,11 @@ public class SkillLoader implements SimpleSynchronousResourceReloadListener {
 
                     for (JsonElement attributeElement : skillJsonObject.getAsJsonArray("attributes")) {
                         JsonObject attributeJsonObject = attributeElement.getAsJsonObject();
+                        String attributeType = attributeJsonObject.get("type").getAsString();
 
-                        Optional<RegistryEntry.Reference<EntityAttribute>> entityAttribute = Registries.ATTRIBUTE.getEntry(Identifier.of(attributeJsonObject.get("type").getAsString()));
+                        // Intentar obtener el atributo del registro
+                        Optional<RegistryEntry.Reference<EntityAttribute>> entityAttribute = Registries.ATTRIBUTE.getEntry(Identifier.of(attributeType));
+
                         if (entityAttribute.isPresent()) {
                             int attributeId = -1;
                             if (attributeJsonObject.has("id")) {
@@ -100,8 +103,19 @@ public class SkillLoader implements SimpleSynchronousResourceReloadListener {
                             if (attributeId != -1) {
                                 attributeIds.add(attributeId);
                             }
+
+                            // LOGGING: Confirmar que se agregó el atributo
+                            if (attributeType.startsWith("spell_power:")) {
+                                LOGGER.info("[SPELL-POWER] Spell Power attribute {} successfully loaded for skill {} (base: {}, value per level: {}, operation: {})",
+                                        attributeType, key, baseValue, levelValue, operation);
+                            }
                         } else {
-                            LOGGER.warn("Attribute {} is not a usable attribute in skill {}.", attributeJsonObject.get("type").getAsString(), skillJsonObject.get("id").getAsString());
+                            // Verificar si es un atributo de mod opcional (spell_power, etc.)
+                            if (isOptionalModAttribute(attributeType)) {
+                                LOGGER.info("[WARN] Optional mod attribute {} skipped in skill {} (mod may not be loaded).", attributeType, key);
+                            } else {
+                                LOGGER.warn("[WARN/ERROR] Attribute {} is not a usable attribute in skill {}.", attributeType, key);
+                            }
                             continue;
                         }
                     }
@@ -143,5 +157,29 @@ public class SkillLoader implements SimpleSynchronousResourceReloadListener {
         Map<Integer, Skill> sortedMap = new TreeMap<>(LevelManager.SKILLS);
         LevelManager.SKILLS.clear();
         LevelManager.SKILLS.putAll(sortedMap);
+    }
+
+    /**
+     * Verifica si un atributo pertenece a un mod opcional que puede no estar cargado
+     */
+    private static boolean isOptionalModAttribute(String attributeType) {
+        // Lista de prefijos de mods opcionales conocidos
+        String[] optionalModPrefixes = {
+                "spell_power:",
+                "spell_engine:",
+                "wizards:",
+                "paladins:",
+                "archers:",
+                "rogues:"
+                // Agregar más mods opcionales según sea necesario
+        };
+
+        for (String prefix : optionalModPrefixes) {
+            if (attributeType.startsWith(prefix)) {
+                return true;
+            }
+        }
+
+        return false;
     }
 }

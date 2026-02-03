@@ -172,7 +172,74 @@
     "id": 5,
     "key": "magic",
     "level": 20,
-    "attributes": [],
+    "attributes": [
+      {
+        "type": "spell_power:fire",
+        "base": 0,
+        "operation": "ADD_VALUE",
+        "value": 1
+      },
+      {
+        "type": "spell_power:frost",
+        "base": 0,
+        "operation": "ADD_VALUE",
+        "value": 1
+      },
+      {
+        "type": "spell_power:arcane",
+        "base": 0,
+        "operation": "ADD_VALUE",
+        "value": 1
+      },
+      {
+        "type": "spell_power:healing",
+        "base": 0,
+        "operation": "ADD_VALUE",
+        "value": 1
+      },
+      {
+        "type": "spell_power:lightning",
+        "base": 0,
+        "operation": "ADD_VALUE",
+        "value": 1
+      },
+      {
+        "type": "spell_power:soul",
+        "base": 0,
+        "operation": "ADD_VALUE",
+        "value": 1
+      },
+      {
+        "type": "spell_power:fire",
+        "base": 0,
+        "operation": "ADD_VALUE",
+        "value": 1
+      },
+      {
+        "type": "spell_power:critical_chance",
+        "base": 0,
+        "operation": "ADD_VALUE",
+        "value": 5
+      },
+      {
+        "type": "spell_power:critical_damage",
+        "base": 0,
+        "operation": "ADD_VALUE",
+        "value": 10
+      },
+      {
+        "type": "spell_power:haste",
+        "base": 0,
+        "operation": "ADD_VALUE",
+        "value": 10
+      },
+      {
+        "type": "spell_power:resistance.generic",
+        "base": 0,
+        "operation": "ADD_VALUE",
+        "value": 0.1
+      }
+    ],
     "bonus": [
       {
         "level": 20,

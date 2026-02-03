@@ -12,6 +12,7 @@
     "compat.BackpackItemMixin",
     "compat.LevelManagerCompatMixin",
     "compat.TieredCompatMixin",
+    "compat.SpellPowerCompatMixin",
     "entity.EntityAccessor",
     "entity.VehicleEntityAccessor",
     "entity.AnimalEntityMixin",

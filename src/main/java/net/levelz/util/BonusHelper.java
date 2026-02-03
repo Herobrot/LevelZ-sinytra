@@ -2,11 +2,13 @@ package net.levelz.util;
 
 import net.fabricmc.fabric.api.tag.convention.v2.ConventionalBlockTags;
 import net.fabricmc.fabric.api.tag.convention.v2.ConventionalItemTags;
+
 import net.levelz.access.LevelManagerAccess;
 import net.levelz.entity.LevelExperienceOrbEntity;
 import net.levelz.init.ConfigInit;
 import net.levelz.level.LevelManager;
 import net.levelz.level.SkillBonus;
+
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.component.DataComponentTypes;
@@ -14,6 +16,7 @@ import net.minecraft.component.type.FoodComponent;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.enchantment.Enchantments;
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.attribute.EntityAttribute;
 import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
@@ -22,6 +25,11 @@ import net.minecraft.entity.passive.PassiveEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.projectile.PersistentProjectileEntity;
 import net.minecraft.entity.projectile.ProjectileEntity;
+import net.minecraft.entity.attribute.EntityAttributeInstance;
+import net.minecraft.entity.attribute.EntityAttributeModifier;
+import net.minecraft.registry.Registries;
+import net.minecraft.registry.entry.RegistryEntry;
+import net.minecraft.util.Identifier;
 import net.minecraft.item.ItemStack;
 import net.minecraft.loot.context.LootContextParameterSet;
 import net.minecraft.registry.RegistryKeys;
@@ -395,6 +403,101 @@ public class BonusHelper {
             }
         }
         return false;
+    }
+
+    //Spell-Power Bonuses
+    public static void applySpellPowerBonuses(PlayerEntity playerEntity) {
+        if (playerEntity.getWorld().isClient) return;
+
+        LevelManager levelManager = ((LevelManagerAccess) playerEntity).getLevelManager();
+
+        // Fire Spell Power
+        if (LevelManager.BONUSES.containsKey("spellPowerFire")) {
+            SkillBonus skillBonus = LevelManager.BONUSES.get("spellPowerFire");
+            int level = levelManager.getPlayerSkills().get(skillBonus.getId()).getLevel();
+            if (level >= skillBonus.getLevel()) {
+                var fireAttribute = Registries.ATTRIBUTE.get(Identifier.of("spell_power:fire"));
+                if (fireAttribute != null) {
+                    var instance = playerEntity.getAttributeInstance((RegistryEntry<EntityAttribute>) fireAttribute);
+                    if (instance != null) {
+                        removeModifier(instance, "levelz_fire_bonus");
+                        instance.addTemporaryModifier(new EntityAttributeModifier(
+                                Identifier.of("levelz", "fire_bonus"),
+                                level * ConfigInit.CONFIG.spellPowerFireBonus,
+                                EntityAttributeModifier.Operation.ADD_VALUE
+                        ));
+                    }
+                }
+            }
+        }
+
+        // Critical Chance
+        if (LevelManager.BONUSES.containsKey("spellCriticalChance")) {
+            SkillBonus skillBonus = LevelManager.BONUSES.get("spellCriticalChance");
+            int level = levelManager.getPlayerSkills().get(skillBonus.getId()).getLevel();
+            if (level >= skillBonus.getLevel()) {
+                var critChanceAttribute = Registries.ATTRIBUTE.get(Identifier.of("spell_power:critical_chance"));
+                if (critChanceAttribute != null) {
+                    var instance = playerEntity.getAttributeInstance((RegistryEntry<EntityAttribute>) critChanceAttribute);
+                    if (instance != null) {
+                        removeModifier(instance, "levelz_crit_chance_bonus");
+                        instance.addTemporaryModifier(new EntityAttributeModifier(
+                                Identifier.of("levelz", "crit_chance_bonus"),
+                                level * ConfigInit.CONFIG.spellCriticalChanceBonus,
+                                EntityAttributeModifier.Operation.ADD_VALUE
+                        ));
+                    }
+                }
+            }
+        }
+
+        // Critical Damage
+        if (LevelManager.BONUSES.containsKey("spellCriticalDamage")) {
+            SkillBonus skillBonus = LevelManager.BONUSES.get("spellCriticalDamage");
+            int level = levelManager.getPlayerSkills().get(skillBonus.getId()).getLevel();
+            if (level >= skillBonus.getLevel()) {
+                var critDamageAttribute = Registries.ATTRIBUTE.get(Identifier.of("spell_power:critical_damage"));
+                if (critDamageAttribute != null) {
+                    var instance = playerEntity.getAttributeInstance((RegistryEntry<EntityAttribute>) critDamageAttribute);
+                    if (instance != null) {
+                        removeModifier(instance, "levelz_crit_damage_bonus");
+                        instance.addTemporaryModifier(new EntityAttributeModifier(
+                                Identifier.of("levelz", "crit_damage_bonus"),
+                                level * ConfigInit.CONFIG.spellCriticalDamageBonus,
+                                EntityAttributeModifier.Operation.ADD_VALUE
+                        ));
+                    }
+                }
+            }
+        }
+
+        // Haste
+        if (LevelManager.BONUSES.containsKey("spellHaste")) {
+            SkillBonus skillBonus = LevelManager.BONUSES.get("spellHaste");
+            int level = levelManager.getPlayerSkills().get(skillBonus.getId()).getLevel();
+            if (level >= skillBonus.getLevel()) {
+                var hasteAttribute = Registries.ATTRIBUTE.get(Identifier.of("spell_power:haste"));
+                if (hasteAttribute != null) {
+                    var instance = playerEntity.getAttributeInstance((RegistryEntry<EntityAttribute>) hasteAttribute);
+                    if (instance != null) {
+                        removeModifier(instance, "levelz_haste_bonus");
+                        instance.addTemporaryModifier(new EntityAttributeModifier(
+                                Identifier.of("levelz", "haste_bonus"),
+                                level * ConfigInit.CONFIG.spellHasteBonus,
+                                EntityAttributeModifier.Operation.ADD_VALUE
+                        ));
+                    }
+                }
+            }
+        }
+    }
+
+    private static void removeModifier(EntityAttributeInstance instance, String idSuffix) {
+        var identifier = Identifier.of("levelz", idSuffix);
+        instance.getModifiers().stream()
+                .filter(mod -> mod.id().equals(identifier))
+                .findFirst()
+                .ifPresent(instance::removeModifier);
     }
 
 

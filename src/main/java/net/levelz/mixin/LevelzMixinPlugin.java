@@ -97,6 +97,9 @@ public class LevelzMixinPlugin implements IMixinConfigPlugin {
         if (mixinClassName.contains("TieredCompatMixin") && isModLoaded("tiered"))
             return false;
 
+        if (mixinClassName.contains("SpellPowerCompatMixin") && !isModLoaded("spell_power"))
+            return false;
+
         // Platform-specific ItemStack mixins
         // ItemStackServerMixin uses ServerPlayerEntity (Fabric only)
         // ItemStackServerConnectorMixin uses LivingEntity (Connector/Forge only)

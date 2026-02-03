@@ -7,8 +7,6 @@ import net.levelz.config.LevelzConfig;
 
 public class ConfigInit {
 
-    public static final boolean isOriginsLoaded = FabricLoader.getInstance().isModLoaded("origins");
-
     public static LevelzConfig CONFIG = new LevelzConfig();
 
     public static void init() {
