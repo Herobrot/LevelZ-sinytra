@@ -39,15 +39,7 @@ public class CompatInit {
         }
 
         if (FabricLoader.getInstance().isModLoaded("spell_power")) {
-            try {
-                initSpellPower();
-                System.out.println("[LevelZ] Spell Power compatibility initialized successfully");
-            } catch (Exception e) {
-                System.out.println("[LevelZ] Spell Power detected but compatibility failed: " + e.getMessage());
-                e.printStackTrace();
-            }
-        } else {
-            System.out.println("[LevelZ] Spell Power not detected, compatibility disabled");
+            initSpellPowerCompat();
         }
     }
 
@@ -120,16 +112,43 @@ public class CompatInit {
         }
     }
 
-    private static void initSpellPower() {
+    /**
+     * Initializes Spell Power compatibility detection.
+     *
+     * NOTE: This only verifies that the Spell Power API classes exist.
+     * The actual integration is datapack-based and happens automatically
+     * when SkillLoader detects Spell Power and loads default-rpg.json.
+     *
+     * No runtime attribute modification is performed here - that approach
+     * was proven to be incompatible with LevelZ's architecture.
+     */
+    private static void initSpellPowerCompat() {
         try {
-            // Verificar que las clases necesarias existan
+            // Verify core API classes exist
             Class.forName("net.spell_power.api.SpellSchools");
             Class.forName("net.spell_power.api.SpellPowerMechanics");
 
-            // Si llegamos aquí, el mod está disponible y es compatible
-            System.out.println("[LevelZ] Spell Power API classes found and compatible");
+            System.out.println("╔════════════════════════════════════════════════════════════════╗");
+            System.out.println("║ [LevelZ] Spell Power API detected                              ║");
+            System.out.println("║                                                                ║");
+            System.out.println("║ Integration method: Datapack-based                             ║");
+            System.out.println("║ → School-based magic skills available via default-rpg.json     ║");
+            System.out.println("║ → No runtime attribute modification needed                     ║");
+            System.out.println("║                                                                ║");
+            System.out.println("║ Skills that will be available:                                 ║");
+            System.out.println("║   • fire_magic    → spell_power:fire                           ║");
+            System.out.println("║   • frost_magic   → spell_power:frost                          ║");
+            System.out.println("║   • arcane_magic  → spell_power:arcane                         ║");
+            System.out.println("║   • healing_magic → spell_power:healing                        ║");
+            System.out.println("║   • lightning_magic → spell_power:lightning                    ║");
+            System.out.println("║   • soul_magic    → spell_power:soul                           ║");
+            System.out.println("║   • spell_mastery → crit, haste, crit damage                   ║");
+            System.out.println("╚════════════════════════════════════════════════════════════════╝");
+
         } catch (ClassNotFoundException e) {
-            throw new RuntimeException("Spell Power API classes not found", e);
+            System.out.println("[LevelZ] ⚠ Spell Power mod detected but API classes not found");
+            System.out.println("[LevelZ]   This may indicate an incompatible version");
+            System.out.println("[LevelZ]   School-based magic skills will not be available");
         }
     }
 

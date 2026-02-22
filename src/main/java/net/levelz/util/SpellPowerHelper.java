@@ -4,7 +4,6 @@ import net.levelz.access.LevelManagerAccess;
 import net.levelz.level.LevelManager;
 import net.levelz.level.PlayerSkill;
 import net.minecraft.entity.attribute.EntityAttribute;
-import net.minecraft.entity.attribute.EntityAttributeInstance;
 import net.minecraft.entity.attribute.EntityAttributeModifier;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.registry.Registries;
@@ -31,7 +30,7 @@ public class SpellPowerHelper {
 
     public static void applySpellPowerBonuses(PlayerEntity playerEntity) {
         if (playerEntity.getWorld().isClient) return;
-        if (!isSpellPowerAvailable()) return;
+        if (isSpellPowerAvailable()) return;
 
         LevelManager levelManager = ((LevelManagerAccess) playerEntity).getLevelManager();
         PlayerSkill magicSkill = levelManager.getPlayerSkills().get(MAGIC_SKILL_ID);
@@ -88,7 +87,7 @@ public class SpellPowerHelper {
 
     public static void clearSpellPowerBonuses(PlayerEntity playerEntity) {
         if (playerEntity.getWorld().isClient) return;
-        if (!isSpellPowerAvailable()) return;
+        if (isSpellPowerAvailable()) return;
 
         String[][] attributeData = {
                 {"spell_power:fire", "fire_bonus"},

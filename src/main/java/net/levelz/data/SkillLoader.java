@@ -4,6 +4,7 @@ import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import net.fabricmc.fabric.api.resource.SimpleSynchronousResourceReloadListener;
+import net.fabricmc.loader.api.FabricLoader;
 import net.levelz.LevelzMain;
 import net.levelz.init.ConfigInit;
 import net.levelz.level.LevelManager;
@@ -47,11 +48,37 @@ public class SkillLoader implements SimpleSynchronousResourceReloadListener {
         AtomicInteger skillCount = new AtomicInteger();
         List<Integer> attributeIds = new ArrayList<>();
 
+        // Determine which datapack to prioritize based on Spell Power availability
+        boolean useRpgDatapack = shouldUseRpgDatapack();
+
+        if (useRpgDatapack) {
+            LOGGER.info("╔════════════════════════════════════════════════════════════════╗");
+            LOGGER.info("║ Spell Power detected - Loading RPG skill set                   ║");
+            LOGGER.info("║ School-based magic skills will be available                    ║");
+            LOGGER.info("╚════════════════════════════════════════════════════════════════╝");
+        } else {
+            LOGGER.info("Loading standard skill set");
+        }
+
         manager.findResources("skill", id -> id.getPath().endsWith(".json")).forEach((id, resourceRef) -> {
             try {
-                if (!ConfigInit.CONFIG.defaultSkills && id.getPath().endsWith("/default.json")) {
+                String fileName = id.getPath();
+
+                // Skip default.json if using RPG datapack, or skip default-rpg.json if not
+                if (useRpgDatapack && fileName.endsWith("/default.json") && !ConfigInit.CONFIG.defaultSkills) {
+                    LOGGER.debug("Skipping default.json (using RPG datapack)");
                     return;
                 }
+                if (!useRpgDatapack && fileName.endsWith("/default-rpg.json")) {
+                    LOGGER.debug("Skipping default-rpg.json (Spell Power not available)");
+                    return;
+                }
+
+                // Original skip logic for default skills
+                if (!ConfigInit.CONFIG.defaultSkills && fileName.endsWith("/default.json")) {
+                    return;
+                }
+
                 InputStream stream = resourceRef.getInputStream();
                 JsonObject data = JsonParser.parseReader(new InputStreamReader(stream)).getAsJsonObject();
 
@@ -104,17 +131,18 @@ public class SkillLoader implements SimpleSynchronousResourceReloadListener {
                                 attributeIds.add(attributeId);
                             }
 
-                            // LOGGING: Confirmar que se agregó el atributo
+                            // Enhanced logging for Spell Power attributes
                             if (attributeType.startsWith("spell_power:")) {
-                                LOGGER.info("[SPELL-POWER] Spell Power attribute {} successfully loaded for skill {} (base: {}, value per level: {}, operation: {})",
+                                LOGGER.info("  ✓ Spell Power attribute '{}' registered for skill '{}' (base: {}, +{} per level, op: {})",
                                         attributeType, key, baseValue, levelValue, operation);
                             }
                         } else {
                             // Verificar si es un atributo de mod opcional (spell_power, etc.)
                             if (isOptionalModAttribute(attributeType)) {
-                                LOGGER.info("[WARN] Optional mod attribute {} skipped in skill {} (mod may not be loaded).", attributeType, key);
+                                LOGGER.warn("  ⚠ Optional mod attribute '{}' skipped in skill '{}' (mod not loaded or attributes not yet registered)",
+                                        attributeType, key);
                             } else {
-                                LOGGER.warn("[WARN/ERROR] Attribute {} is not a usable attribute in skill {}.", attributeType, key);
+                                LOGGER.warn("  ✗ Attribute '{}' is not a usable attribute in skill '{}'.", attributeType, key);
                             }
                             continue;
                         }
@@ -157,6 +185,41 @@ public class SkillLoader implements SimpleSynchronousResourceReloadListener {
         Map<Integer, Skill> sortedMap = new TreeMap<>(LevelManager.SKILLS);
         LevelManager.SKILLS.clear();
         LevelManager.SKILLS.putAll(sortedMap);
+
+        LOGGER.info("✓ Skill loading complete: {} skills loaded successfully", skillCount.get());
+    }
+
+    /**
+     * Determines whether to use the RPG datapack based on Spell Power availability.
+     *
+     * @return true if Spell Power is loaded AND its attributes are registered
+     */
+    private boolean shouldUseRpgDatapack() {
+        // Check if Spell Power mod is loaded
+        if (!FabricLoader.getInstance().isModLoaded("spell_power")) {
+            return false;
+        }
+
+        // Check if key Spell Power attributes exist in the registry
+        try {
+            Identifier fireAttr = Identifier.of("spell_power", "fire");
+            Identifier frostAttr = Identifier.of("spell_power", "frost");
+
+            boolean fireExists = Registries.ATTRIBUTE.containsId(fireAttr);
+            boolean frostExists = Registries.ATTRIBUTE.containsId(frostAttr);
+
+            if (fireExists && frostExists) {
+                LOGGER.info("  → Spell Power attributes detected in registry");
+                return true;
+            } else {
+                LOGGER.warn("  → Spell Power mod loaded but attributes not yet registered");
+                LOGGER.warn("     This may indicate loading order issues or incompatible versions");
+                return false;
+            }
+        } catch (Exception e) {
+            LOGGER.error("  → Error checking Spell Power attributes: {}", e.getMessage());
+            return false;
+        }
     }
 
     /**
