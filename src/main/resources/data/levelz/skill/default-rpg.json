@@ -172,7 +172,32 @@
     "id": 5,
     "key": "magic",
     "level": 20,
-    "attributes": [],
+    "attributes": [
+      {
+        "type": "spell_power:critical_chance",
+        "base": -15,
+        "operation": "ADD_VALUE",
+        "value": 5
+      },
+      {
+        "type": "spell_power:critical_damage",
+        "base": -15,
+        "operation": "ADD_VALUE",
+        "value": 5
+      },
+      {
+        "type": "spell_power:haste",
+        "base": -15,
+        "operation": "ADD_VALUE",
+        "value": 7.5
+      },
+      {
+        "type": "spell_power:resistance.generic",
+        "base": -1.5,
+        "operation": "ADD_VALUE",
+        "value": 0.25
+      }
+    ],
     "bonus": [
       {
         "level": 20,
@@ -186,6 +211,137 @@
         "level": 1,
         "key": "damageReflection"
       }
+    ]
+  },
+  "pyromancer": {
+    "replace": false,
+    "id": 12,
+    "key": "pyromancer",
+    "level": 20,
+    "attributes": [
+      {
+        "type": "spell_power:fire",
+        "base": -2.5,
+        "operation": "ADD_VALUE",
+        "value": 0.5
+      },
+      {
+        "type": "spell_power:critical_damage",
+        "base": 0,
+        "operation": "ADD_VALUE",
+        "value": 1
+      }
+    ],
+    "bonus": [
+
+    ]
+  },
+  "cryomancer": {
+    "replace": false,
+    "id": 13,
+    "key": "cryomancer",
+    "level": 20,
+    "attributes": [
+      {
+        "type": "spell_power:frost",
+        "base": -3,
+        "operation": "ADD_VALUE",
+        "value": 0.75
+      },
+      {
+        "type": "spell_power:critical_damage",
+        "base": 0,
+        "operation": "ADD_VALUE",
+        "value": 2
+      }
+    ],
+    "bonus": [
+
+    ]
+  },
+  "arcanist": {
+    "replace": false,
+    "id": 14,
+    "key": "arcanist",
+    "level": 20,
+    "attributes": [
+      {
+        "type": "spell_power:arcane",
+        "base": -3,
+        "operation": "ADD_VALUE",
+        "value": 0.55
+      },
+      {
+        "type": "spell_power:haste",
+        "base": 0,
+        "operation": "ADD_VALUE",
+        "value": 1.5
+      },
+      {
+        "type": "spell_power:critical_chance",
+        "base": 0,
+        "operation": "ADD_VALUE",
+        "value": 1
+      }
+    ],
+    "bonus": [
+
+    ]
+  },
+  "cleric": {
+    "replace": false,
+    "id": 15,
+    "key": "cleric",
+    "level": 20,
+    "attributes": [
+      {
+        "type": "spell_power:healing",
+        "base": -1,
+        "operation": "ADD_VALUE",
+        "value": 1.5
+      },
+      {
+        "type": "spell_power:haste",
+        "base": 0,
+        "operation": "ADD_VALUE",
+        "value": 0.5
+      },
+      {
+        "type": "minecraft:generic.armor_toughness",
+        "base": 0,
+        "operation": "ADD_VALUE",
+        "value": 0.1
+      }
+    ],
+    "bonus": [
+      {
+        "level": 10,
+        "key": "deathGraceChance"
+      }
+    ]
+  },
+  "electromancer": {
+    "replace": false,
+    "id": 16,
+    "key": "electromancer",
+    "level": 20,
+    "attributes": [
+
+    ],
+    "bonus": [
+
+    ]
+  },
+  "necromancer": {
+    "replace": false,
+    "id": 17,
+    "key": "necromancer",
+    "level": 20,
+    "attributes": [
+
+    ],
+    "bonus": [
+
     ]
   },
   "mining": {

@@ -48,36 +48,40 @@ public class SkillLoader implements SimpleSynchronousResourceReloadListener {
         AtomicInteger skillCount = new AtomicInteger();
         List<Integer> attributeIds = new ArrayList<>();
 
-        // Determine which datapack to prioritize based on Spell Power availability
-        boolean useRpgDatapack = shouldUseRpgDatapack();
+        // Determine which datapack to use (REPLACE, not add)
+        boolean useRpgDatapack = isSpellPowerAvailable();
 
         if (useRpgDatapack) {
-            LOGGER.info("╔════════════════════════════════════════════════════════════════╗");
-            LOGGER.info("║ Spell Power detected - Loading RPG skill set                   ║");
-            LOGGER.info("║ School-based magic skills will be available                    ║");
-            LOGGER.info("╚════════════════════════════════════════════════════════════════╝");
+            LOGGER.info("[levelZ-RPG] Spell Power detected - Loading RPG skill set");
         } else {
-            LOGGER.info("Loading standard skill set");
+            LOGGER.info("Loading standard skills from default.json");
         }
 
         manager.findResources("skill", id -> id.getPath().endsWith(".json")).forEach((id, resourceRef) -> {
             try {
                 String fileName = id.getPath();
 
-                // Skip default.json if using RPG datapack, or skip default-rpg.json if not
-                if (useRpgDatapack && fileName.endsWith("/default.json") && !ConfigInit.CONFIG.defaultSkills) {
-                    LOGGER.debug("Skipping default.json (using RPG datapack)");
-                    return;
-                }
-                if (!useRpgDatapack && fileName.endsWith("/default-rpg.json")) {
-                    LOGGER.debug("Skipping default-rpg.json (Spell Power not available)");
-                    return;
+                // CRITICAL: Skip logic to prevent loading both datapacks
+                if (useRpgDatapack) {
+                    // When using RPG datapack, SKIP default.json entirely
+                    if (fileName.endsWith("/default.json")) {
+                        LOGGER.debug("Skipping default.json (using default-rpg.json instead)");
+                        return;
+                    }
+                } else {
+                    // When NOT using RPG datapack, SKIP default-rpg.json
+                    if (fileName.endsWith("/default-rpg.json")) {
+                        LOGGER.debug("Skipping default-rpg.json (Spell Power not available)");
+                        return;
+                    }
                 }
 
-                // Original skip logic for default skills
+                // Original skip logic for default skills config
                 if (!ConfigInit.CONFIG.defaultSkills && fileName.endsWith("/default.json")) {
                     return;
                 }
+
+                LOGGER.debug("Loading skill file: {}", fileName);
 
                 InputStream stream = resourceRef.getInputStream();
                 JsonObject data = JsonParser.parseReader(new InputStreamReader(stream)).getAsJsonObject();
@@ -139,7 +143,7 @@ public class SkillLoader implements SimpleSynchronousResourceReloadListener {
                         } else {
                             // Verificar si es un atributo de mod opcional (spell_power, etc.)
                             if (isOptionalModAttribute(attributeType)) {
-                                LOGGER.warn("  ⚠ Optional mod attribute '{}' skipped in skill '{}' (mod not loaded or attributes not yet registered)",
+                                LOGGER.warn("  ⚠ Optional mod attribute '{}' skipped in skill '{}' (mod not loaded or attributes not registered)",
                                         attributeType, key);
                             } else {
                                 LOGGER.warn("  ✗ Attribute '{}' is not a usable attribute in skill '{}'.", attributeType, key);
@@ -190,11 +194,11 @@ public class SkillLoader implements SimpleSynchronousResourceReloadListener {
     }
 
     /**
-     * Determines whether to use the RPG datapack based on Spell Power availability.
+     * Checks if Spell Power is available AND its attributes are registered.
      *
-     * @return true if Spell Power is loaded AND its attributes are registered
+     * @return true if Spell Power integration should be enabled
      */
-    private boolean shouldUseRpgDatapack() {
+    private boolean isSpellPowerAvailable() {
         // Check if Spell Power mod is loaded
         if (!FabricLoader.getInstance().isModLoaded("spell_power")) {
             return false;
@@ -209,15 +213,15 @@ public class SkillLoader implements SimpleSynchronousResourceReloadListener {
             boolean frostExists = Registries.ATTRIBUTE.containsId(frostAttr);
 
             if (fireExists && frostExists) {
-                LOGGER.info("  → Spell Power attributes detected in registry");
+                LOGGER.info("|-- Spell Power attributes detected in registry");
                 return true;
             } else {
-                LOGGER.warn("  → Spell Power mod loaded but attributes not yet registered");
-                LOGGER.warn("     This may indicate loading order issues or incompatible versions");
+                LOGGER.warn("|-- Spell Power mod loaded but attributes not yet registered");
+                LOGGER.warn("    (fire: {}, frost: {})", fireExists, frostExists);
                 return false;
             }
         } catch (Exception e) {
-            LOGGER.error("  → Error checking Spell Power attributes: {}", e.getMessage());
+            LOGGER.error("|-- Error checking Spell Power attributes: {}", e.getMessage());
             return false;
         }
     }

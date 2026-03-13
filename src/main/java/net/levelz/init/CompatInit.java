@@ -128,25 +128,9 @@ public class CompatInit {
             Class.forName("net.spell_power.api.SpellSchools");
             Class.forName("net.spell_power.api.SpellPowerMechanics");
 
-            System.out.println("╔════════════════════════════════════════════════════════════════╗");
-            System.out.println("║ [LevelZ] Spell Power API detected                              ║");
-            System.out.println("║                                                                ║");
-            System.out.println("║ Integration method: Datapack-based                             ║");
-            System.out.println("║ → School-based magic skills available via default-rpg.json     ║");
-            System.out.println("║ → No runtime attribute modification needed                     ║");
-            System.out.println("║                                                                ║");
-            System.out.println("║ Skills that will be available:                                 ║");
-            System.out.println("║   • fire_magic    → spell_power:fire                           ║");
-            System.out.println("║   • frost_magic   → spell_power:frost                          ║");
-            System.out.println("║   • arcane_magic  → spell_power:arcane                         ║");
-            System.out.println("║   • healing_magic → spell_power:healing                        ║");
-            System.out.println("║   • lightning_magic → spell_power:lightning                    ║");
-            System.out.println("║   • soul_magic    → spell_power:soul                           ║");
-            System.out.println("║   • spell_mastery → crit, haste, crit damage                   ║");
-            System.out.println("╚════════════════════════════════════════════════════════════════╝");
-
+            System.out.println("[LevelZ] Spell Power API detected");
         } catch (ClassNotFoundException e) {
-            System.out.println("[LevelZ] ⚠ Spell Power mod detected but API classes not found");
+            System.out.println("[LevelZ-WARNING]  Spell Power mod detected but API classes not found");
             System.out.println("[LevelZ]   This may indicate an incompatible version");
             System.out.println("[LevelZ]   School-based magic skills will not be available");
         }
@@ -154,6 +138,6 @@ public class CompatInit {
 
     @SuppressWarnings({"rawtypes"})
     private static Object createTypedConsumer(Class<?> eventClass, TreeChopForgeCompat handler) {
-        return (java.util.function.Consumer) (event) -> handler.onStartChop(event);
+        return (java.util.function.Consumer) handler::onStartChop;
     }
 }
