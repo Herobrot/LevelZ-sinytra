@@ -124,9 +124,9 @@ dependencies {
 
     modImplementation ('maven.modrinth:wizards:2.6.5+1.21.1-fabric')
 
-
     modImplementation ('maven.modrinth:paladins-and-priests:2.6.4+1.21.1-fabric')
     include(modImplementation("maven.modrinth:shield-api:2.1.0-fabric"))
+
     // Spell-Power {Fabric}
     modCompileOnly modRuntimeOnly ('maven.modrinth:spell-power:1.4.4+1.21.1-fabric') {
         exclude(group: "net.fabricmc.fabric-api")

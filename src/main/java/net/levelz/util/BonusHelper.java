@@ -404,7 +404,7 @@ public class BonusHelper {
         }
         return false;
     }
-
+/*
     //Spell-Power Bonuses
     public static void applySpellPowerBonuses(PlayerEntity playerEntity) {
         if (playerEntity.getWorld().isClient) return;
@@ -491,7 +491,7 @@ public class BonusHelper {
             }
         }
     }
-
+*/
     private static void removeModifier(EntityAttributeInstance instance, String idSuffix) {
         var identifier = Identifier.of("levelz", idSuffix);
         instance.getModifiers().stream()

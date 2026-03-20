@@ -161,47 +161,6 @@ public class LevelzConfig implements ConfigData, ConfigSync {
     @Comment("Bonus id: evadingDamageChance")
     public float evadingDamageChanceBonus = 0.1F;
 
-    //Compat Spell-Power
-    @ConfigEntry.Category("skill_settings_dlc")
-    @Comment("Bonus id: spellPowerFireBonus")
-    public int spellPowerFireBonus = 0;
-
-    @ConfigEntry.Category("skill_settings_dlc")
-    @Comment("Bonus id: spellPowerFrostBonus")
-    public int spellPowerFrostBonus = 0;
-
-    @ConfigEntry.Category("skill_settings_dlc")
-    @Comment("Bonus id: spellPowerArcaneBonus")
-    public int spellPowerArcaneBonus = 0;
-
-    @ConfigEntry.Category("skill_settings_dlc")
-    @Comment("Bonus id: spellPowerHealingBonus")
-    public int spellPowerHealingBonus = 0;
-
-    @ConfigEntry.Category("skill_settings_dlc")
-    @Comment("Bonus id: spellPowerLightningBonus")
-    public int spellPowerLightningBonus = 0;
-
-    @ConfigEntry.Category("skill_settings_dlc")
-    @Comment("Bonus id: spellPowerSoulBonus")
-    public int spellPowerSoulBonus = 0;
-
-    @ConfigEntry.Category("skill_settings_dlc")
-    @Comment("Bonus id: spellCriticalChanceBonus")
-    public int spellCriticalChanceBonus = 0;
-
-    @ConfigEntry.Category("skill_settings_dlc")
-    @Comment("Bonus id: spellCriticalDamageBonus")
-    public int spellCriticalDamageBonus = 10;
-
-    @ConfigEntry.Category("skill_settings_dlc")
-    @Comment("Bonus id: spellHasteBonus")
-    public int spellHasteBonus = 0;
-
-    @ConfigEntry.Category("skill_settings_dlc")
-    @Comment("Bonus id: spellResistanceGenericBonus")
-    public float spellResistanceGenericBonus = 0F;
-
     // Experience settings
     @ConfigEntry.Category("experience_settings")
     @Comment("XP equation: lvl^exponent * multiplicator + base")
