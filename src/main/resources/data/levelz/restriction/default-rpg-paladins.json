@@ -1,0 +1,392 @@
+{
+  "paladins_melee_03": {
+    "replace": false,
+    "skills": {
+      "melee": 3
+    },
+    "items": [
+      "paladins:stone_claymore"
+    ]
+  },
+  "paladins_melee_07": {
+    "replace": false,
+    "skills": {
+      "melee": 7,
+      "cleric": 4
+    },
+    "items": [
+      "paladins:golden_claymore",
+      "paladins:golden_mace"
+    ]
+  },
+  "paladins_melee_08": {
+    "replace": false,
+    "skills": {
+      "melee": 8,
+      "cleric": 5
+    },
+    "items": [
+      "paladins:iron_claymore",
+      "paladins:iron_mace"
+    ]
+  },
+  "paladins_melee_15": {
+    "replace": false,
+    "skills": {
+      "melee": 15,
+      "cleric": 12
+    },
+    "items": [
+      "paladins:diamond_claymore",
+      "paladins:diamond_mace"
+    ]
+  },
+  "paladins_melee_20": {
+    "replace": false,
+    "skills": {
+      "melee": 20,
+      "cleric": 16
+    },
+    "items": [
+      "paladins:netherite_claymore",
+      "paladins:netherite_mace"
+    ]
+  },
+  "paladins_dlc_melee_20": {
+    "replace": false,
+    "skills": {
+      "melee": 20,
+      "cleric": 20
+    },
+    "items": [
+      "paladins:ruby_claymore",
+      "paladins:ruby_mace",
+      "paladins:aether_claymore",
+      "paladins:aether_mace",
+      "paladins:aeternium_claymore",
+      "paladins:aeternium_mace"
+    ]
+  },
+  "paladins_smithing_18": {
+    "replace": false,
+    "skills": {
+      "smithing": 18
+    },
+    "crafting": [
+      "paladins:netherite_holy_wand"
+    ]
+  },
+  "paladins_smithing_20": {
+    "replace": false,
+    "skills": {
+      "smithing": 20
+    },
+    "crafting": [
+      "paladins:netherite_claymore",
+      "paladins:netherite_mace",
+      "paladins:netherite_great_hammer",
+      "paladins:netherite_holy_staff",
+      "paladins:netherite_kite_shield",
+      "paladins:netherite_crusader_armor_head",
+      "paladins:netherite_crusader_armor_chest",
+      "paladins:netherite_crusader_armor_legs",
+      "paladins:netherite_crusader_armor_feet",
+      "paladins:netherite_prior_robe_head",
+      "paladins:netherite_prior_robe_chest",
+      "paladins:netherite_prior_robe_legs",
+      "paladins:netherite_prior_robe_feet",
+
+      "paladins:ruby_holy_staff",
+      "paladins:ruby_claymore",
+      "paladins:ruby_great_hammer",
+      "paladins:ruby_kite_shield",
+      "paladins:ruby_mace",
+      "paladins:aether_holy_staff",
+      "paladins:aether_claymore",
+      "paladins:aether_great_hammer",
+      "paladins:aether_kite_shield",
+      "paladins:aether_mace",
+      "paladins:aeternium_holy_staff",
+      "paladins:aeternium_claymore",
+      "paladins:aeternium_great_hammer",
+      "paladins:aeternium_kite_shield",
+      "paladins:aeternium_mace"
+    ]
+  },
+  "paladins_cleric_03": {
+    "replace": false,
+    "skills": {
+      "cleric": 3
+    },
+    "items": [
+      "paladins:acolyte_wand"
+    ]
+  },
+  "paladins_cleric_07": {
+    "replace": false,
+    "skills": {
+      "cleric": 7
+    },
+    "items": [
+      "paladins:holy_wand"
+    ]
+  },
+  "paladins_cleric_10": {
+    "replace": false,
+    "skills": {
+      "cleric": 10
+    },
+    "items": [
+      "paladins:holy_staff"
+    ]
+  },
+  "paladins_cleric_12": {
+    "replace": false,
+    "skills": {
+      "cleric": 12
+    },
+    "items": [
+      "paladins:diamond_holy_wand"
+    ]
+  },
+  "paladins_cleric_15": {
+    "replace": false,
+    "skills": {
+      "cleric": 15
+    },
+    "items": [
+      "paladins:diamond_holy_staff"
+    ]
+  },
+  "paladins_cleric_16": {
+    "replace": false,
+    "skills": {
+      "cleric": 16
+    },
+    "items": [
+      "paladins:netherite_holy_wand"
+    ]
+  },
+  "paladins_cleric_20": {
+    "replace": false,
+    "skills": {
+      "cleric": 20
+    },
+    "items": [
+      "paladins:netherite_holy_staff",
+      "paladins:ruby_holy_staff",
+      "paladins:aether_holy_staff",
+      "paladins:aeternium_holy_staff"
+    ]
+  },
+  "paladins_defense_07": {
+    "replace": false,
+    "skills": {
+      "defense": 7,
+      "cleric": 4
+    },
+    "items": [
+      "paladins:golden_kite_shield"
+    ]
+  },
+  "paladins_defense_10": {
+    "replace": false,
+    "skills": {
+      "defense": 10,
+      "cleric": 6
+    },
+    "items": [
+      "paladins:iron_kite_shield"
+    ]
+  },
+  "paladins_defense_15": {
+    "replace": false,
+    "skills": {
+      "defense": 15,
+      "cleric": 10
+    },
+    "items": [
+      "paladins:diamond_kite_shield"
+    ]
+  },
+  "paladins_defense_20": {
+    "replace": false,
+    "skills": {
+      "defense": 20,
+      "cleric": 16
+    },
+    "items": [
+      "paladins:netherite_kite_shield"
+    ]
+  },
+  "paladins_dlc_defense_20": {
+    "replace": false,
+    "skills": {
+      "defense": 20,
+      "cleric": 20
+    },
+    "items": [
+      "paladins:ruby_kite_shield",
+      "paladins:aether_kite_shield",
+      "paladins:aeternium_kite_shield"
+    ]
+  },
+  "paladins_double_paladins_armor": {
+    "replace": false,
+    "skills": {
+      "defense": 9,
+      "cleric": 3
+    },
+    "items": [
+      "paladins:paladin_armor_head",
+      "paladins:paladin_armor_chest",
+      "paladins:paladin_armor_legs",
+      "paladins:paladin_armor_feet"
+    ]
+  },
+  "paladins_double_crusader_armor": {
+    "replace": false,
+    "skills": {
+      "defense": 13,
+      "cleric": 6
+    },
+    "items": [
+      "paladins:crusader_armor_head",
+      "paladins:crusader_armor_chest",
+      "paladins:crusader_armor_legs",
+      "paladins:crusader_armor_feet"
+    ]
+  },
+  "paladins_double_netherite_crusader_armor": {
+    "replace": false,
+    "skills": {
+      "defense": 20,
+      "cleric": 6
+    },
+    "items": [
+      "paladins:netherite_crusader_armor_head",
+      "paladins:netherite_crusader_armor_chest",
+      "paladins:netherite_crusader_armor_legs",
+      "paladins:netherite_crusader_armor_feet"
+    ]
+  },
+  "paladins_double_priest_robe": {
+    "replace": false,
+    "skills": {
+      "cleric": 6,
+      "defense": 3
+    },
+    "items": [
+      "paladins:priest_robe_head",
+      "paladins:priest_robe_chest",
+      "paladins:priest_robe_legs",
+      "paladins:priest_robe_feet"
+    ]
+  },
+  "paladins_double_prior_priest_robe": {
+    "replace": false,
+    "skills": {
+      "cleric": 10,
+      "defense": 3
+    },
+    "items": [
+      "paladins:prior_robe_head",
+      "paladins:prior_robe_chest",
+      "paladins:prior_robe_legs",
+      "paladins:prior_robe_feet"
+    ]
+  },
+  "paladins_double_netherite_prior_priest_robe": {
+    "replace": false,
+    "skills": {
+      "cleric": 15,
+      "defense": 3
+    },
+    "items": [
+      "paladins:netherite_prior_robe_head",
+      "paladins:netherite_prior_robe_chest",
+      "paladins:netherite_prior_robe_legs",
+      "paladins:netherite_prior_robe_feet"
+    ]
+  },
+  "paladins_double_wooden_great_hammer": {
+    "replace": false,
+    "skills": {
+      "smithing": 1,
+      "melee": 1
+    },
+    "items": [
+      "paladins:wooden_great_hammer"
+    ]
+  },
+  "paladins_double_stone_great_hammer": {
+    "replace": false,
+    "skills": {
+      "smithing": 3,
+      "melee": 2
+    },
+    "items": [
+      "paladins:stone_great_hammer"
+    ]
+  },
+  "paladins_double_golden_great_hammer": {
+    "replace": false,
+    "skills": {
+      "smithing": 7,
+      "melee": 3
+    },
+    "items": [
+      "paladins:golden_great_hammer"
+    ]
+  },
+  "paladins_double_iron_great_hammer": {
+    "replace": false,
+    "skills": {
+      "smithing": 8,
+      "melee": 4
+    },
+    "items": [
+      "paladins:iron_great_hammer"
+    ]
+  },
+  "paladins_double_diamond_great_hammer": {
+    "replace": false,
+    "skills": {
+      "smithing": 15,
+      "melee": 5
+    },
+    "items": [
+      "paladins:diamond_great_hammer"
+    ]
+  },
+  "paladins_double_netherite_great_hammer": {
+    "replace": false,
+    "skills": {
+      "smithing": 20,
+      "melee": 8
+    },
+    "items": [
+      "paladins:netherite_great_hammer"
+    ]
+  },
+  "paladins_double_aeternium_great_hammer": {
+    "replace": false,
+    "skills": {
+      "smithing": 20,
+      "melee": 12
+    },
+    "items": [
+      "paladins:aeternium_great_hammer"
+    ]
+  },
+  "paladins_double_aether_great_hammer": {
+    "replace": false,
+    "skills": {
+      "smithing": 20,
+      "melee": 12
+    },
+    "items": [
+      "paladins:aether_great_hammer"
+    ]
+  }
+}
