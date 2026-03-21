@@ -173,6 +173,13 @@
   "restriction.levelz.bartering.tooltip": "Bartering %d",
   "restriction.levelz.luck.tooltip": "Luck %d",
 
+  "restriction.levelz.arcanist.tooltip": "Arcanist %d",
+  "restriction.levelz.pyromancer.tooltip": "Pyromancer %d",
+  "restriction.levelz.cryomancer.tooltip": "Cryomancer %d",
+  "restriction.levelz.electromancer.tooltip": "Electromancer %d",
+  "restriction.levelz.necromancer.tooltip": "Necromancer %d",
+  "restriction.levelz.cleric.tooltip": "Cleric %d",
+
   "block.levelz.locked.tooltip": "§cLocked",
   "block.levelz.locked_with_level.tooltip": "Locked Level %d",
 
