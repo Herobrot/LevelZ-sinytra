@@ -110,6 +110,23 @@
   "skill.levelz.bartering": "Bartering",
   "skill.levelz.luck": "Luck",
 
+  "skill.levelz.pyromancer": "Pyromancer",
+  "skill.levelz.cryomancer": "Cryomancer",
+  "skill.levelz.arcanist": "Arcanist",
+  "skill.levelz.electromancer": "Electromancer",
+  "skill.levelz.necromancer": "Necromancer",
+  "skill.levelz.cleric": "Cleric",
+
+  "skill.levelz.pyromancer.0": "Pyromancer increase magic fire\ndmg",
+  "skill.levelz.pyromancer.1": "Pyromancer increase magic critical\nmg",
+  "skill.levelz.cryomancer.0": "Cryomancer increase magic frost\ndmg",
+  "skill.levelz.cryomancer.1": "Cryomancer increase magic \ncritical dmg",
+  "skill.levelz.arcanist.0": "Arcanist increase arcane dmg",
+  "skill.levelz.arcanist.1": "Arcanist increase magic haste",
+  "skill.levelz.cleric.0": "Cleric increase magic healing\npower",
+  "skill.levelz.cleric.1": "Cleric increase magic haste",
+  "skill.levelz.cleric.2": "Cleric increase armor toughness",
+
   "skill.levelz.constitution.0": "Constitution increases max health",
   "skill.levelz.melee.0": "Melee increases attack dmg",
   "skill.levelz.melee.1": "Melee increases attack knck.",
