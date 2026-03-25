@@ -71,7 +71,8 @@
     "player.InventoryScreenMixin",
     "player.MinecraftClientMixin",
     "player.PlayerEntityRendererMixin",
-    "player.PlayerListHudMixin"
+    "player.PlayerListHudMixin",
+    "compat.SpellTooltipMixin"
   ],
   "injectors": {
     "defaultRequire": 1
