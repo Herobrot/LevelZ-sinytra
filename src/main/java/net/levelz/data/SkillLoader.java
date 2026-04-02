@@ -35,26 +35,28 @@ public class SkillLoader implements SimpleSynchronousResourceReloadListener {
     /**
      * Maps each built-in RPG companion filename suffix to the Fabric mod ID
      * that must be present for that file to be loaded.
-     *
+
      * To add support for a new companion mod, simply add one line here:
      *   RPG_COMPANION_FILES.put("/default-rpg-mymod.json", "my-mod-id");
-     *
+
      * No other code changes are required.
      */
     private static final Map<String, String> RPG_COMPANION_FILES = new LinkedHashMap<>();
 
     static {
-        // Wizards mod → fire / frost / arcane class skills (IDs 12–14)
+        // Wizards mod -> fire / frost / arcane class skills (IDs 12–14)
         RPG_COMPANION_FILES.put("/default-rpg-wizards.json",  "wizards");
-        // Paladins and Priests mod → cleric / healing class skills (ID 15)
+        // Paladins and Priests mod -> cleric / healing class skills (ID 15)
         RPG_COMPANION_FILES.put("/default-rpg-paladins.json", "paladins");
+        // Rogues and Warriors -> rogue / berserk skills
+        RPG_COMPANION_FILES.put("/default-rpg-rogues.json", "rogues");
     }
 
     /**
      * The lowest skill ID reserved for companion mods.
      * IDs 0..(COMPANION_ID_START - 1) must always be contiguous.
      * IDs >= COMPANION_ID_START are optional and may be absent.
-     *
+
      * Keep this in sync with the lowest "id" value across all companion JSON files.
      */
     private static final int COMPANION_ID_START = 12;
@@ -297,7 +299,7 @@ public class SkillLoader implements SimpleSynchronousResourceReloadListener {
 
     /**
      * Validates loaded skill IDs.
-     *
+
      * Base skill IDs (0 to COMPANION_ID_START - 1) must be contiguous.
      * Companion skill IDs (>= COMPANION_ID_START) are optional — gaps are allowed
      * when the companion mod is not installed.

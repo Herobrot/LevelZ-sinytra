@@ -106,7 +106,6 @@
       "paladins:aether_great_hammer",
       "paladins:aether_kite_shield",
       "paladins:aether_mace",
-      "paladins:aeternium_holy_staff",
       "paladins:aeternium_claymore",
       "paladins:aeternium_great_hammer",
       "paladins:aeternium_kite_shield",
@@ -175,8 +174,7 @@
     "items": [
       "paladins:netherite_holy_staff",
       "paladins:ruby_holy_staff",
-      "paladins:aether_holy_staff",
-      "paladins:aeternium_holy_staff"
+      "paladins:aether_holy_staff"
     ]
   },
   "paladins_defense_07": {

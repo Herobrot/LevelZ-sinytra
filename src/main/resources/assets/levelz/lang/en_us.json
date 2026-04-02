@@ -116,6 +116,8 @@
   "skill.levelz.electromancer": "Electromancer",
   "skill.levelz.necromancer": "Necromancer",
   "skill.levelz.cleric": "Cleric",
+  "skill.levelz.rogue": "Rogue",
+  "skill.levelz.berserk": "Berserk",
 
   "skill.levelz.pyromancer.0": "Pyromancer increase magic fire\ndmg",
   "skill.levelz.pyromancer.1": "Pyromancer increase magic critical\nmg",
@@ -126,6 +128,13 @@
   "skill.levelz.cleric.0": "Cleric increase magic healing\npower",
   "skill.levelz.cleric.1": "Cleric increase magic haste",
   "skill.levelz.cleric.2": "Cleric increase armor toughness",
+  "skill.levelz.rogue.0": "Rogue increase attack speed",
+  "skill.levelz.rogue.1": "Rogue increase attack damage",
+  "skill.levelz.rogue.2": "Rogue increase sneaking speed",
+  "skill.levelz.rogue.3": "Rogue increase evasion chance",
+  "skill.levelz.berserk.0": "Berkserk increase max health",
+  "skill.levelz.berserk.1": "Berkserk increase attack damage",
+  "skill.levelz.berserk.2": "Berkserk increase armor toughness",
 
   "skill.levelz.constitution.0": "Constitution increases max health",
   "skill.levelz.melee.0": "Melee increases attack dmg",
@@ -179,6 +188,8 @@
   "restriction.levelz.electromancer.tooltip": "Electromancer %d",
   "restriction.levelz.necromancer.tooltip": "Necromancer %d",
   "restriction.levelz.cleric.tooltip": "Cleric %d",
+  "restriction.levelz.rogue.tooltip": "Rogue %d",
+  "restriction.levelz.berserk.tooltip": "Berserk %d",
 
   "block.levelz.locked.tooltip": "§cLocked",
   "block.levelz.locked_with_level.tooltip": "Locked Level %d",
