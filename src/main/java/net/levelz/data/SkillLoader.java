@@ -51,7 +51,7 @@ public class SkillLoader implements SimpleSynchronousResourceReloadListener {
         // Rogues and Warriors -> rogue / berserk skills (ID 16-17)
         RPG_COMPANION_FILES.put("/default-rpg-rogues.json", "rogues");
         // Archers -> ranger skilll (ID 18)
-        RPG_COMPANION_FILES.put("/default-rpg-ranger.json", "archers");
+        RPG_COMPANION_FILES.put("/default-rpg-archers.json", "archers");
     }
 
     /**
@@ -106,6 +106,21 @@ public class SkillLoader implements SimpleSynchronousResourceReloadListener {
                                 "rename it to avoid shadowing the built-in skill file. Skipping.", id);
                         return;
                     }
+
+                    // Si el archivo externo tiene nombre de companion RPG
+                    // y RPG no está activo (o el companion mod no está cargado), rechazarlo
+                    String matchedCompanionSuffix = RPG_COMPANION_FILES.keySet().stream()
+                            .filter(fileName::endsWith)
+                            .findFirst()
+                            .orElse(null);
+
+                    if (matchedCompanionSuffix != null && !activeCompanionFiles.contains(matchedCompanionSuffix)) {
+                        String requiredMod = RPG_COMPANION_FILES.get(matchedCompanionSuffix);
+                        LOGGER.warn("[LevelZ] External datapack '{}' requires companion mod '{}' " +
+                                "which is not loaded — skipping.", id, requiredMod);
+                        return;
+                    }
+
                     debugLog("[LevelZ] Loading external datapack: {}", fileName);
                     loadSkillFile(id, resourceRef, skillCount, attributeIds);
                     return;
