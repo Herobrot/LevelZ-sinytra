@@ -50,114 +50,85 @@ public class LevelzConfig implements ConfigData, ConfigSync {
     public boolean devMode = false;
 
     // Skill bonuses
-    @ConfigEntry.Category("skill_settings")
     @Comment("Bonus id: bowDamage")
     public float bowDamageBonus = 0.5F;
 
-    @ConfigEntry.Category("skill_settings")
     @Comment("Bonus id: bowDoubleDamageChance")
     public float bowDoubleDamageChanceBonus = 0.1F;
 
-    @ConfigEntry.Category("skill_settings")
     @Comment("Bonus id: crossbowDamage")
     public float crossbowDamageBonus = 0.5F;
 
-    @ConfigEntry.Category("skill_settings")
     @Comment("Bonus id: crossbowDoubleDamageChance")
     public float crossbowDoubleDamageChanceBonus = 0.1F;
 
-    @ConfigEntry.Category("skill_settings")
     @Comment("Bonus id: itemDamageChance")
     public float itemDamageChanceBonus = 0.01F;
 
-    @ConfigEntry.Category("skill_settings")
     @Comment("Bonus id: potionEffectChance")
     public float potionEffectChanceBonus = 0.2F;
 
-    @ConfigEntry.Category("skill_settings")
     @Comment("Bonus id: twinBreedChance")
     public float twinBreedChanceBonus = 0.2F;
 
-    @ConfigEntry.Category("skill_settings")
     @Comment("Bonus id: fallDamageReduction")
     public float fallDamageReductionBonus = 0.2F;
 
-    @ConfigEntry.Category("skill_settings")
     @Comment("Bonus id: deathGraceChance")
     public float deathGraceChanceBonus = 0.2F;
 
-    @ConfigEntry.Category("skill_settings")
     @Comment("Bonus id: tntStrength")
     public float tntStrengthBonus = 1F;
 
-    @ConfigEntry.Category("skill_settings")
     @Comment("Bonus id: priceDiscount")
     public float priceDiscountBonus = 0.01F;
 
-    @ConfigEntry.Category("skill_settings")
     @Comment("Bonus id: tradeXp")
     public float tradeXpBonus = 0.02F;
 
-    @ConfigEntry.Category("skill_settings")
     @Comment("Bonus id: miningDropChance")
     public float miningDropChanceBonus = 0.01F;
 
-    @ConfigEntry.Category("skill_settings")
     @Comment("Bonus id: plantDropChance")
     public float plantDropChanceBonus = 0.01F;
 
-    @ConfigEntry.Category("skill_settings")
     @Comment("Bonus id: anvilXpCap")
     public int anvilXpCap = 30;
-    @ConfigEntry.Category("skill_settings")
     @Comment("Bonus id: anvilXpDiscount")
     public float anvilXpDiscountBonus = 0.01F;
 
-    @ConfigEntry.Category("skill_settings")
     @Comment("Bonus id: anvilXpChance")
     public float anvilXpChanceBonus = 0.01F;
 
-    @ConfigEntry.Category("skill_settings")
     @Comment("Bonus id: healthRegen")
     public float healthRegenBonus = 0.025F;
 
-    @ConfigEntry.Category("skill_settings")
     @Comment("Bonus id: healthAbsorption")
     public float healthAbsorptionBonus = 4F;
 
-    @ConfigEntry.Category("skill_settings")
     @Comment("Bonus id: exhaustionReduction")
     public float exhaustionReductionBonus = 0.02F;
 
-    @ConfigEntry.Category("skill_settings")
     @Comment("Bonus id: knockbackAttackChance")
     public float meleeKnockbackAttackChanceBonus = 0.01F;
 
-    @ConfigEntry.Category("skill_settings")
     @Comment("Bonus id: criticalAttackChance")
     public float meleeCriticalAttackChanceBonus = 0.01F;
 
-    @ConfigEntry.Category("skill_settings")
     @Comment("Bonus id: meleeCriticalAttackDamage")
     public float meleeCriticalAttackDamageBonus = 0.3F;
 
-    @ConfigEntry.Category("skill_settings")
     @Comment("Bonus id: meleeDoubleAttackDamageChance")
     public float meleeDoubleAttackDamageChanceBonus = 0.2F;
 
-    @ConfigEntry.Category("skill_settings")
     @Comment("Bonus id: foodIncreasion")
     public float foodIncreasionBonus = 0.02F;
 
-    @ConfigEntry.Category("skill_settings")
     @Comment("Bonus id: damageReflection")
     public float damageReflectionBonus = 0.02F;
-
-    @ConfigEntry.Category("skill_settings")
     @Comment("Bonus id: damageReflectionChance")
     public float damageReflectionChanceBonus = 0.005F;
 
-    @ConfigEntry.Category("skill_settings")
     @Comment("Bonus id: evadingDamageChance")
     public float evadingDamageChanceBonus = 0.1F;
 
