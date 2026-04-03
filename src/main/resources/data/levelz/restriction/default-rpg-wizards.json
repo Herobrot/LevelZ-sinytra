@@ -1,0 +1,335 @@
+{
+  "wizards_magic_03": {
+    "replace": false,
+    "skills": {
+      "magic": 3
+    },
+    "items": [
+      "wizards:wand_novice"
+    ]
+  },
+
+  "wizards_magic_05": {
+    "replace": false,
+    "skills": {
+      "magic": 5
+    },
+    "items": [
+      "wizards:wizard_robe_head",
+      "wizards:wizard_robe_chest",
+      "wizards:wizard_robe_legs",
+      "wizards:wizard_robe_feet"
+    ]
+  },
+
+  "wizards_magic_11": {
+    "replace": false,
+    "skills": {
+      "magic": 10,
+      "pyromancer": 5,
+      "cryomancer": 5,
+      "arcanist": 5
+    },
+    "items": [
+      "wizards:staff_wizard"
+    ]
+  },
+
+  "wizards_pyromancer_05": {
+    "replace": false,
+    "skills": {
+      "magic": 3,
+      "pyromancer": 5
+    },
+    "items": [
+      "wizards:wand_fire"
+    ]
+  },
+
+  "wizards_arcanist_05": {
+    "replace": false,
+    "skills": {
+      "magic": 3,
+      "arcanist": 5
+    },
+    "items": [
+      "wizards:wand_arcane"
+    ]
+  },
+
+  "wizards_cryomancer_05": {
+    "replace": false,
+    "skills": {
+      "magic": 3,
+      "cryomancer": 5
+    },
+    "items": [
+      "wizards:wand_frost"
+    ]
+  },
+
+  "wizards_pyromancer_10": {
+    "replace": false,
+    "skills": {
+      "magic": 5,
+      "pyromancer": 10
+    },
+    "items": [
+      "wizards:fire_robe_head",
+      "wizards:fire_robe_chest",
+      "wizards:fire_robe_legs",
+      "wizards:fire_robe_feet"
+    ]
+  },
+
+  "wizards_arcanist_10": {
+    "replace": false,
+    "skills": {
+      "magic": 5,
+      "arcanist": 10
+    },
+    "items": [
+      "wizards:arcane_robe_head",
+      "wizards:arcane_robe_chest",
+      "wizards:arcane_robe_legs",
+      "wizards:arcane_robe_feet"
+    ]
+  },
+
+  "wizards_cryomancer_10": {
+    "replace": false,
+    "skills": {
+      "magic": 5,
+      "cryomancer": 10
+    },
+    "items": [
+      "wizards:frost_robe_head",
+      "wizards:frost_robe_chest",
+      "wizards:frost_robe_legs",
+      "wizards:frost_robe_feet"
+    ]
+  },
+
+  "wizards_pyromancer_12": {
+    "replace": false,
+    "skills": {
+      "magic": 8,
+      "pyromancer": 12
+    },
+    "items": [
+      "wizards:wand_netherite_fire"
+    ]
+  },
+
+  "wizards_arcanist_12": {
+    "replace": false,
+    "skills": {
+      "magic": 8,
+      "arcanist": 12
+    },
+    "items": [
+      "wizards:wand_netherite_arcane"
+    ]
+  },
+
+  "wizards_cryomancer_12": {
+    "replace": false,
+    "skills": {
+      "magic": 8,
+      "cryomancer": 12
+    },
+    "items": [
+      "wizards:wand_netherite_frost"
+    ]
+  },
+
+  "wizards_pyromancer_15": {
+    "replace": false,
+    "skills": {
+      "magic": 12,
+      "pyromancer": 15
+    },
+    "items": [
+      "wizards:staff_fire"
+    ]
+  },
+
+  "wizards_arcanist_15": {
+    "replace": false,
+    "skills": {
+      "magic": 12,
+      "arcanist": 15
+    },
+    "items": [
+      "wizards:staff_arcane"
+    ]
+  },
+
+  "wizards_cryomancer_15": {
+    "replace": false,
+    "skills": {
+      "magic": 12,
+      "cryomancer": 15
+    },
+    "items": [
+      "wizards:staff_frost"
+    ]
+  },
+
+  "wizards_pyromancer_18": {
+    "replace": false,
+    "skills": {
+      "magic": 15,
+      "pyromancer": 18
+    },
+    "items": [
+      "wizards:netherite_fire_robe_head",
+      "wizards:netherite_fire_robe_chest",
+      "wizards:netherite_fire_robe_legs",
+      "wizards:netherite_fire_robe_feet"
+    ]
+  },
+
+  "wizards_arcanist_18": {
+    "replace": false,
+    "skills": {
+      "magic": 15,
+      "arcanist": 18
+    },
+    "items": [
+      "wizards:netherite_arcane_robe_head",
+      "wizards:netherite_arcane_robe_chest",
+      "wizards:netherite_arcane_robe_legs",
+      "wizards:netherite_arcane_robe_feet"
+    ]
+  },
+
+  "wizards_cryomancer_18": {
+    "replace": false,
+    "skills": {
+      "magic": 15,
+      "cryomancer": 18
+    },
+    "items": [
+      "wizards:netherite_frost_robe_head",
+      "wizards:netherite_frost_robe_chest",
+      "wizards:netherite_frost_robe_legs",
+      "wizards:netherite_frost_robe_feet"
+    ]
+  },
+
+  "wizards_pyromancer_20": {
+    "replace": false,
+    "skills": {
+      "magic": 18,
+      "pyromancer": 20
+    },
+    "items": [
+      "wizards:staff_netherite_fire"
+    ]
+  },
+
+  "wizards_arcanist_20": {
+    "replace": false,
+    "skills": {
+      "magic": 18,
+      "arcanist": 20
+    },
+    "items": [
+      "wizards:staff_netherite_arcane"
+    ]
+  },
+
+  "wizards_cryomancer_20": {
+    "replace": false,
+    "skills": {
+      "magic": 18,
+      "cryomancer": 20
+    },
+    "items": [
+      "wizards:staff_netherite_frost"
+    ]
+  },
+
+  "wizards_pyromancer_dlc_20": {
+    "replace": false,
+    "skills": {
+      "magic": 28,
+      "pyromancer": 20
+    },
+    "items": [
+      "wizards:staff_ruby_fire"
+    ]
+  },
+
+  "wizards_cryomancer_dlc_20": {
+    "replace": false,
+    "skills": {
+      "magic": 28,
+      "cryomancer": 20
+    },
+    "items": [
+      "wizards:staff_smaragdant_frost"
+    ]
+  },
+
+  "wizards_arcanist_dlc_20": {
+    "replace": false,
+    "skills": {
+      "magic": 28,
+      "arcanist": 20
+    },
+    "items": [
+      "wizards:staff_crystal_arcane"
+    ]
+  },
+
+  "wizards_aether_dlc_20": {
+    "replace": false,
+    "skills": {
+      "magic": 28,
+      "pyromancer": 20,
+      "arcanist": 20,
+      "cryomancer": 20
+    },
+    "items": [
+      "wizards:aether_wizard_staff"
+    ]
+  },
+
+  "wizards_smithing_16": {
+    "replace": false,
+    "skills": {
+      "smithing": 16
+    },
+    "crafting": [
+      "wizards:wand_netherite_arcane",
+      "wizards:wand_netherite_fire",
+      "wizards:wand_netherite_frost"
+    ]
+  },
+
+  "wizards_smithing_20": {
+    "replace": false,
+    "skills": {
+      "smithing": 20
+    },
+    "crafting": [
+      "wizards:staff_netherite_arcane",
+      "wizards:staff_netherite_fire",
+      "wizards:staff_netherite_frost",
+      "wizards:netherite_arcane_robe_head",
+      "wizards:netherite_arcane_robe_chest",
+      "wizards:netherite_arcane_robe_legs",
+      "wizards:netherite_arcane_robe_feet",
+      "wizards:netherite_fire_robe_head",
+      "wizards:netherite_fire_robe_chest",
+      "wizards:netherite_fire_robe_legs",
+      "wizards:netherite_fire_robe_feet",
+      "wizards:netherite_frost_robe_head",
+      "wizards:netherite_frost_robe_chest",
+      "wizards:netherite_frost_robe_legs",
+      "wizards:netherite_frost_robe_feet"
+    ]
+  }
+}
