@@ -1,0 +1,332 @@
+{
+  "rogues_double_golden_dagger": {
+    "replace": false,
+    "skills": {
+      "rogue": 4,
+      "melee": 2
+    },
+    "items": [
+      "rogues:golden_dagger"
+    ]
+  },
+  "rogues_double_iron_dagger": {
+    "replace": false,
+    "skills": {
+      "rogue": 8,
+      "melee": 4
+    },
+    "items": [
+      "rogues:iron_dagger"
+    ]
+  },
+  "rogues_double_diamond_dagger": {
+    "replace": false,
+    "skills": {
+      "rogue": 15,
+      "melee": 7
+    },
+    "items": [
+      "rogues:diamond_dagger"
+    ]
+  },
+  "rogues_double_netherite_dagger": {
+    "replace": false,
+    "skills": {
+      "rogue": 20,
+      "melee": 10
+    },
+    "items": [
+      "rogues:netherite_dagger"
+    ]
+  },
+  "rogues_double_dlc_dagger": {
+    "replace": false,
+    "skills": {
+      "rogue": 20,
+      "melee": 15
+    },
+    "items": [
+      "rogues:ruby_dagger",
+      "rogues:aeternium_dagger",
+      "rogues:aether_dagger"
+    ]
+  },
+  "rogues_double_golden_sickle": {
+    "replace": false,
+    "skills": {
+      "rogue": 4,
+      "melee": 2
+    },
+    "items": [
+      "rogues:golden_sickle"
+    ]
+  },
+  "rogues_double_iron_sickle": {
+    "replace": false,
+    "skills": {
+      "rogue": 8,
+      "melee": 4
+    },
+    "items": [
+      "rogues:iron_sickle"
+    ]
+  },
+  "rogues_double_diamond_sickle": {
+    "replace": false,
+    "skills": {
+      "rogue": 15,
+      "melee": 7
+    },
+    "items": [
+      "rogues:diamond_sickle"
+    ]
+  },
+  "rogues_double_netherite_sickle": {
+    "replace": false,
+    "skills": {
+      "rogue": 20,
+      "melee": 10
+    },
+    "items": [
+      "rogues:netherite_sickle"
+    ]
+  },
+  "rogues_double_dlc_sickle": {
+    "replace": false,
+    "skills": {
+      "rogue": 20,
+      "melee": 15
+    },
+    "items": [
+      "rogues:ruby_sickle",
+      "rogues:aeternium_sickle",
+      "rogues:aether_sickle"
+    ]
+  },
+    "rogues_double_stone_double_axe": {
+    "replace": false,
+    "skills": {
+      "berserk": 3,
+      "smithing": 1
+    },
+    "items": [
+      "rogues:stone_double_axe"
+    ]
+  },
+  "rogues_double_golden_double_axe": {
+    "replace": false,
+    "skills": {
+      "berserk": 4,
+      "smithing": 2
+    },
+    "items": [
+      "rogues:golden_double_axe"
+    ]
+  },
+  "rogues_double_iron_double_axe": {
+    "replace": false,
+    "skills": {
+      "berserk": 8,
+      "smithing": 3
+    },
+    "items": [
+      "rogues:iron_double_axe"
+    ]
+  },
+  "rogues_double_diamond_double_axe": {
+    "replace": false,
+    "skills": {
+      "berserk": 15,
+      "smithing": 5
+    },
+    "items": [
+      "rogues:diamond_double_axe"
+    ]
+  },
+  "rogues_double_netherite_double_axe": {
+    "replace": false,
+    "skills": {
+      "berserk": 20,
+      "smithing": 8
+    },
+    "items": [
+      "rogues:netherite_double_axe"
+    ]
+  },
+  "rogues_double_dlc_double_axe": {
+    "replace": false,
+    "skills": {
+      "berserk": 20,
+      "smithing": 14
+    },
+    "items": [
+      "rogues:ruby_double_axe",
+      "rogues:aeternium_double_axe",
+      "rogues:aether_double_axe"
+    ]
+  },
+  "rogues_double_golden_glaive": {
+    "replace": false,
+    "skills": {
+      "berserk": 4,
+      "archery": 2
+    },
+    "items": [
+      "rogues:golden_glaive"
+    ]
+  },
+  "rogues_double_iron_glaive": {
+    "replace": false,
+    "skills": {
+      "berserk": 8,
+      "archery": 3
+    },
+    "items": [
+      "rogues:iron_glaive"
+    ]
+  },
+  "rogues_double_diamond_glaive": {
+    "replace": false,
+    "skills": {
+      "berserk": 15,
+      "archery": 5
+    },
+    "items": [
+      "rogues:diamond_glaive"
+    ]
+  },
+  "rogues_double_netherite_glaive": {
+    "replace": false,
+    "skills": {
+      "berserk": 20,
+      "archery": 8
+    },
+    "items": [
+      "rogues:netherite_glaive"
+    ]
+  },
+  "rogues_double_dlc_glaive": {
+    "replace": false,
+    "skills": {
+      "berserk": 20,
+      "archery": 12
+    },
+    "items": [
+      "rogues:ruby_glaive",
+      "rogues:aeternium_glaive",
+      "rogues:aether_glaive"
+    ]
+  },
+  "rogues_double_rogue_armor": {
+    "replace": false,
+    "skills": {
+      "rogue": 6,
+      "defense": 3
+    },
+    "items": [
+      "rogues:rogue_armor_head",
+      "rogues:rogue_armor_chest",
+      "rogues:rogue_armor_legs",
+      "rogues:rogue_armor_feet"
+    ]
+  },
+  "rogues_double_assassin_armor": {
+    "replace": false,
+    "skills": {
+      "rogue": 10,
+      "defense": 5,
+      "melee": 3
+    },
+    "items": [
+      "rogues:assassin_armor_head",
+      "rogues:assassin_armor_chest",
+      "rogues:assassin_armor_legs",
+      "rogues:assassin_armor_feet"
+    ]
+  },
+  "rogues_double_netherite_assassin_armor": {
+    "replace": false,
+    "skills": {
+      "rogue": 15,
+      "defense": 5,
+      "melee": 5
+    },
+    "items": [
+      "rogues:netherite_assassin_armor_head",
+      "rogues:netherite_assassin_armor_chest",
+      "rogues:netherite_assassin_armor_legs",
+      "rogues:netherite_assassin_armor_feet"
+    ]
+  },
+  "rogues_double_warrior_armor": {
+    "replace": false,
+    "skills": {
+      "berserk": 8,
+      "defense": 7
+    },
+    "items": [
+      "rogues:warrior_armor_head",
+      "rogues:warrior_armor_chest",
+      "rogues:warrior_armor_legs",
+      "rogues:warrior_armor_feet"
+    ]
+  },
+  "rogues_double_berserker_armor": {
+    "replace": false,
+    "skills": {
+      "berserk": 15,
+      "defense": 13
+    },
+    "items": [
+      "rogues:berserker_armor_head",
+      "rogues:berserker_armor_chest",
+      "rogues:berserker_armor_legs",
+      "rogues:berserker_armor_feet"
+    ]
+  },
+  "rogues_double_netherite_berserker_armor": {
+    "replace": false,
+    "skills": {
+      "berserk": 20,
+      "defense": 16
+    },
+    "items": [
+      "rogues:netherite_berserker_armor_head",
+      "rogues:netherite_berserker_armor_chest",
+      "rogues:netherite_berserker_armor_legs",
+      "rogues:netherite_berserker_armor_feet"
+    ]
+  },
+  "rogues_smithing_20": {
+    "replace": false,
+    "skills": {
+      "smithing": 20
+    },
+    "crafting": [
+      "rogues:netherite_dagger",
+      "rogues:netherite_sickle",
+      "rogues:netherite_double_axe",
+      "rogues:netherite_glaive",
+      "rogues:ruby_dagger",
+      "rogues:aeternium_dagger",
+      "rogues:aether_dagger",
+      "rogues:ruby_glaive",
+      "rogues:aeternium_glaive",
+      "rogues:aether_glaive",
+      "rogues:ruby_double_axe",
+      "rogues:aeternium_double_axe",
+      "rogues:aether_double_axe",
+      "rogues:ruby_sickle",
+      "rogues:aeternium_sickle",
+      "rogues:aether_sickle",
+      "rogues:netherite_assassin_armor_head",
+      "rogues:netherite_assassin_armor_chest",
+      "rogues:netherite_assassin_armor_legs",
+      "rogues:netherite_assassin_armor_feet",
+      "rogues:netherite_berserker_armor_head",
+      "rogues:netherite_berserker_armor_chest",
+      "rogues:netherite_berserker_armor_legs",
+      "rogues:netherite_berserker_armor_feet"
+    ]
+  }
+}

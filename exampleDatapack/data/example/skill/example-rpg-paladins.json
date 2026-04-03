@@ -1,0 +1,34 @@
+{
+  "cleric": {
+    "replace": false,
+    "id": 15,
+    "key": "cleric",
+    "level": 20,
+    "attributes": [
+      {
+        "type": "spell_power:healing",
+        "base": -1,
+        "operation": "ADD_VALUE",
+        "value": 1.5
+      },
+      {
+        "type": "spell_power:haste",
+        "base": 0,
+        "operation": "ADD_VALUE",
+        "value": 0.5
+      },
+      {
+        "type": "minecraft:generic.armor_toughness",
+        "base": 0,
+        "operation": "ADD_VALUE",
+        "value": 0.1
+      }
+    ],
+    "bonus": [
+      {
+        "level": 10,
+        "key": "deathGraceChance"
+      }
+    ]
+  }
+}

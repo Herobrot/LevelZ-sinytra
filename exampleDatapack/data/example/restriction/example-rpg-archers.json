@@ -1,0 +1,209 @@
+{
+  "archers_ranger_08": {
+    "replace": false,
+    "skills": {
+      "ranger": 8
+    },
+    "items": [
+      "archers:composite_longbow"
+    ]
+  },
+  "archers_ranger_11": {
+    "replace": false,
+    "skills": {
+      "ranger": 11
+    },
+    "items": [
+      "archers:mechanic_shortbow"
+    ]
+  },
+  "archers_ranger_12": {
+    "replace": false,
+    "skills": {
+      "ranger": 12
+    },
+    "items": [
+      "archers:rapid_crossbow"
+    ]
+  },
+  "archers_ranger_14": {
+    "replace": false,
+    "skills": {
+      "ranger": 14
+    },
+    "items": [
+      "archers:royal_longbow"
+    ]
+  },
+  "archers_ranger_15": {
+    "replace": false,
+    "skills": {
+      "ranger": 15
+    },
+    "items": [
+      "archers:heavy_crossbow"
+    ]
+  },
+  "archers_ranger_17": {
+    "replace": false,
+    "skills": {
+      "ranger": 17
+    },
+    "items": [
+      "archers:netherite_shortbow"
+    ]
+  },
+  "archers_ranger_18": {
+    "replace": false,
+    "skills": {
+      "ranger": 18
+    },
+    "items": [
+      "archers:netherite_rapid_crossbow"
+    ]
+  },
+  "archers_ranger_19": {
+    "replace": false,
+    "skills": {
+      "ranger": 19
+    },
+    "items": [
+      "archers:netherite_longbow"
+    ]
+  },
+  "archers_ranger_20": {
+    "replace": false,
+    "skills": {
+      "ranger": 20
+    },
+    "items": [
+      "archers:netherite_heavy_crossbow"
+    ]
+  },
+  "archers_smithing_20": {
+    "replace": false,
+    "skills": {
+      "smithing": 20
+    },
+    "crafting": [
+      "archers:netherite_shortbow",
+      "archers:netherite_ranger_armor_head",
+      "archers:netherite_ranger_armor_chest",
+      "archers:netherite_ranger_armor_legs",
+      "archers:netherite_ranger_armor_feet",
+      "archers:netherite_rapid_crossbow",
+      "archers:netherite_longbow",
+      "archers:netherite_heavy_crossbow",
+      "archers:netherite_spear"
+    ]
+  },
+  "archers_double_archer_armor": {
+    "replace": false,
+    "skills": {
+      "ranger": 8,
+      "defense": 3
+    },
+    "items": [
+      "archers:archer_armor_head",
+      "archers:archer_armor_chest",
+      "archers:archer_armor_legs",
+      "archers:archer_armor_feet"
+    ]
+  },
+  "archers_double_ranger_armor": {
+    "replace": false,
+    "skills": {
+      "ranger": 12,
+      "defense": 3
+    },
+    "items": [
+      "archers:ranger_armor_head",
+      "archers:ranger_armor_chest",
+      "archers:ranger_armor_legs",
+      "archers:ranger_armor_feet"
+    ]
+  },
+  "archers_double_netherite_ranger_armor": {
+    "replace": false,
+    "skills": {
+      "ranger": 17,
+      "defense": 3
+    },
+    "items": [
+      "archers:netherite_ranger_armor_head",
+      "archers:netherite_ranger_armor_chest",
+      "archers:netherite_ranger_armor_legs",
+      "archers:netherite_ranger_armor_feet"
+    ]
+  },
+  "archers_double_small_quiver": {
+    "replace": false,
+    "skills": {
+      "agility": 5,
+      "ranger": 5
+    },
+    "items": [
+      "archers:small_quiver"
+    ]
+  },
+  "archers_double_medium_quiver": {
+    "replace": false,
+    "skills": {
+      "agility": 10,
+      "ranger": 10
+    },
+    "items": [
+      "archers:medium_quiver"
+    ]
+  },
+  "archers_double_large_quiver": {
+    "replace": false,
+    "skills": {
+      "agility": 15,
+      "ranger": 15
+    },
+    "items": [
+      "archers:large_quiver"
+    ]
+  },
+  "archers_double_golden_spear": {
+    "replace": false,
+    "skills": {
+      "melee": 3,
+      "ranger": 7
+    },
+    "items": [
+      "archers:golden_spear"
+    ]
+  },
+  "archers_double_iron_spear": {
+    "replace": false,
+    "skills": {
+      "melee": 4,
+      "ranger": 8
+    },
+    "items": [
+      "archers:iron_spear"
+    ]
+  },
+  "archers_double_diamond_spear": {
+    "replace": false,
+    "skills": {
+      "melee": 8,
+      "ranger": 15
+    },
+    "items": [
+      "archers:diamond_spear"
+    ]
+  },
+  "archers_double_netherite_spear": {
+    "replace": false,
+    "skills": {
+      "melee": 10,
+      "ranger": 20
+    },
+    "items": [
+      "archers:netherite_spear"
+    ]
+  }
+}

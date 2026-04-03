@@ -1,0 +1,75 @@
+{
+  "rogue": {
+    "replace": false,
+    "id": 16,
+    "key": "rogue",
+    "level": 20,
+    "attributes": [
+      {
+        "type": "generic.attack_speed",
+        "operation": "ADD_VALUE",
+        "value": 0.05
+      },
+      {
+        "type": "generic.attack_damage",
+        "operation": "ADD_VALUE",
+        "value": 0.05
+      },
+      {
+        "type": "player.sneaking_speed",
+        "operation": "ADD_VALUE",
+        "value": 0.05
+      },
+      {
+        "type": "spell_engine:evasion_chance",
+        "operation": "ADD_VALUE",
+        "base": -15,
+        "value": 2.5
+      }
+    ],
+    "bonus": [
+      {
+        "level": 5,
+        "key": "meleeCriticalAttackChance"
+      },
+      {
+        "level": 10,
+        "key": "evadingDamageChance"
+      }
+    ]
+  },
+  "berserk": {
+    "replace": false,
+    "id": 17,
+    "key": "berserk",
+    "level": 20,
+    "attributes": [
+      {
+        "type": "generic.max_health",
+        "operation": "ADD_VALUE",
+        "value": 0.5
+      },
+      {
+        "type": "generic.attack_damage",
+        "operation": "ADD_VALUE",
+        "value": 0.15
+      },
+      {
+        "type": "minecraft:generic.armor_toughness",
+        "base": 0,
+        "operation": "ADD_VALUE",
+        "value": 0.2
+      }
+    ],
+    "bonus": [
+      {
+        "level": 5,
+        "key": "healthRegen"
+      },
+      {
+        "level": 5,
+        "key": "meleeCriticalAttackDamage"
+      }
+    ]
+  }
+}

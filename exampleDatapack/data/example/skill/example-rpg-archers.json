@@ -1,0 +1,34 @@
+{
+  "ranger": {
+    "replace": false,
+    "id": 18,
+    "key": "ranger",
+    "level": 20,
+    "attributes": [
+      {
+        "type": "ranged_weapon:damage",
+        "base": -1,
+        "operation": "ADD_VALUE",
+        "value": 0.1
+      },
+      {
+        "type": "ranged_weapon:haste",
+        "base": 95,
+        "operation": "ADD_VALUE",
+        "value": 1
+      },
+      {
+        "type": "ranged_weapon:pull_time",
+        "operation": "ADD_VALUE",
+        "base": 0.5,
+        "value": -0.01
+      },
+      {
+        "type": "ranged_weapon:velocity",
+        "operation": "ADD_VALUE",
+        "base": 0,
+        "value": 0.1
+      }
+    ]
+  }
+}
