@@ -128,6 +128,10 @@ dependencies {
     include(modImplementation("maven.modrinth:shield-api:2.1.0-fabric"))
 
     modImplementation ('maven.modrinth:rogues-and-warriors:2.6.4+1.21.1-fabric')
+
+    modImplementation ('maven.modrinth:archers:2.6.8+1.21.1-fabric')
+    include(modImplementation("maven.modrinth:ranged-weapon-api:2.3.2+1.21.1-fabric"))
+    include(modImplementation("maven.modrinth:bundle-api:1.1.0-fabric"))
     // Spell-Power {Fabric}
     modCompileOnly modRuntimeOnly ('maven.modrinth:spell-power:1.4.4+1.21.1-fabric') {
         exclude(group: "net.fabricmc.fabric-api")

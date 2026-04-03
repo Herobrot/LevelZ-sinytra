@@ -48,8 +48,10 @@ public class SkillLoader implements SimpleSynchronousResourceReloadListener {
         RPG_COMPANION_FILES.put("/default-rpg-wizards.json",  "wizards");
         // Paladins and Priests mod -> cleric / healing class skills (ID 15)
         RPG_COMPANION_FILES.put("/default-rpg-paladins.json", "paladins");
-        // Rogues and Warriors -> rogue / berserk skills
+        // Rogues and Warriors -> rogue / berserk skills (ID 16-17)
         RPG_COMPANION_FILES.put("/default-rpg-rogues.json", "rogues");
+        // Archers -> ranger skilll (ID 18)
+        RPG_COMPANION_FILES.put("/default-rpg-ranger.json", "archers");
     }
 
     /**
