@@ -106,7 +106,7 @@ public class SkillLoader implements SimpleSynchronousResourceReloadListener {
                                 "rename it to avoid shadowing the built-in skill file. Skipping.", id);
                         return;
                     }
-                    LOGGER.debug("[LevelZ] Loading external datapack: {}", fileName);
+                    debugLog("[LevelZ] Loading external datapack: {}", fileName);
                     loadSkillFile(id, resourceRef, skillCount, attributeIds);
                     return;
                 }
@@ -115,20 +115,20 @@ public class SkillLoader implements SimpleSynchronousResourceReloadListener {
                 if (isInternalBase) {
                     if (useRpgDatapack) {
                         if (fileName.endsWith("/default.json")) {
-                            LOGGER.debug("[LevelZ] Skipping default.json (RPG mode active)");
+                            debugLog("[LevelZ] Skipping default.json (RPG mode active)");
                             return;
                         }
                     } else {
                         if (fileName.endsWith("/default-rpg.json")) {
-                            LOGGER.debug("[LevelZ] Skipping default-rpg.json (Spell Power not available)");
+                            debugLog("[LevelZ] Skipping default-rpg.json (Spell Power not available)");
                             return;
                         }
                     }
                     if (!ConfigInit.CONFIG.defaultSkills) {
-                        LOGGER.debug("[LevelZ] Skipping built-in '{}' (defaultSkills = false)", fileName);
+                        debugLog("[LevelZ] Skipping built-in '{}' (defaultSkills = false)", fileName);
                         return;
                     }
-                    LOGGER.debug("[LevelZ] Loading built-in base file: {}", fileName);
+                    debugLog("[LevelZ] Loading built-in base file: {}", fileName);
                     loadSkillFile(id, resourceRef, skillCount, attributeIds);
                     return;
                 }
@@ -147,12 +147,12 @@ public class SkillLoader implements SimpleSynchronousResourceReloadListener {
 
                     if (!activeCompanionFiles.contains(matchedSuffix)) {
                         String requiredMod = RPG_COMPANION_FILES.get(matchedSuffix);
-                        LOGGER.debug("[LevelZ] Skipping '{}' (mod '{}' not present or RPG mode inactive)",
+                        debugLog("[LevelZ] Skipping '{}' (mod '{}' not present or RPG mode inactive)",
                                 fileName, requiredMod);
                         return;
                     }
 
-                    LOGGER.debug("[LevelZ] Loading companion file: {}", fileName);
+                    debugLog("[LevelZ] Loading companion file: {}", fileName);
                     loadSkillFile(id, resourceRef, skillCount, attributeIds);
                 }
 
@@ -323,7 +323,7 @@ public class SkillLoader implements SimpleSynchronousResourceReloadListener {
         int maxId = Collections.max(LevelManager.SKILLS.keySet());
         for (int i = COMPANION_ID_START; i <= maxId; i++) {
             if (!LevelManager.SKILLS.containsKey(i)) {
-                LOGGER.debug("[LevelZ] Companion skill id {} is absent (companion mod not loaded)", i);
+                debugLog("[LevelZ] Companion skill id {} is absent (companion mod not loaded)", i);
             }
         }
     }
@@ -395,5 +395,11 @@ public class SkillLoader implements SimpleSynchronousResourceReloadListener {
             if (attributeType.startsWith(prefix)) return true;
         }
         return false;
+    }
+
+    private static void debugLog(String message, Object... args) {
+        if (ConfigInit.CONFIG.devMode) {
+            LOGGER.debug(message, args);
+        }
     }
 }
