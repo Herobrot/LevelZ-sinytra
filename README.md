@@ -1,7 +1,19 @@
-# LevelZ
+# LevelZ - RPG-Series
 
-LevelZ is a mod which adds skillables to the player which can get skilled to unlock blocks and strengthen passive
-skills.
+LevelZ-RPG-Series is a fork mod from [LevelZ](https://github.com/Globox1997/LevelZ) which adds skillables to the player which can get skilled to unlock blocks and strengthen passive
+skills. But is also add compat to the RPG-Series
+
+## What's new?
+
+The biggest difference is full compatibility with the official RPG series, dynamically 
+adding skills depending on which mods from the series you've installed. 
+It incorporates the RAYs-LevelZ-Compat restrictions for the RPG series but has been modified to support the new skills.
+
+You can add your own datapack replacing the default! remember to use the "replace": true in the skills!
+
+And also, is compatible with Sinytra!
+
+Y también en lenguaje español todo! :D
 
 ### Installation
 
@@ -98,6 +110,19 @@ A skill requires:
 - `player.submerged_mining_speed`
 - `player.sweeping_damage_ratio`
 - `generic.water_movement_efficiency`
+- `spell_power:fire`
+- `spell_power:arcane`
+- `spell_power:frost`
+- `spell_power:haste`
+- `spell_power:healing`
+- `spell_power:critical_chance`
+- `spell_power:critical_damage`
+- `spell_power:resistance.generic`
+- `spell_engine:evasion_chance`
+- `ranged_weapon:damage`
+- `ranged_weapon:haste`
+- `ranged_weapon:pull_time`
+- `ranged_weapon:velocity`
 
 ##### Bonuses
 - `bowDamage`: Each level grants +bowDamage on arrow damage
