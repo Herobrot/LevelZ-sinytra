@@ -1,3 +1,6 @@
+# IMPORTANT!!! IF YOU CRASH WITH SINIYTRA DOWNLOADED, MAKE SURE YOU USE THE CONNECTOR 12 VERSION!!!
+The last versions, 13 and 14 somehow mess up the compatibility :P
+
 # LevelZ
 
 LevelZ is a mod which adds skillables to the player which can get skilled to unlock blocks and strengthen passive
