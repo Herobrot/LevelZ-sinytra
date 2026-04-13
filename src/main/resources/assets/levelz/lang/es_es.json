@@ -175,6 +175,8 @@
   "restriction.levelz.craftable.tooltip": "§7Crafteable",
   "restriction.levelz.locked.tooltip": "Bloqueado",
 
+  "item.levelz.locked.tooltip": "Bloqueado",
+
   "restriction.levelz.constitution.tooltip": "Constitución %d",
   "restriction.levelz.melee.tooltip": "Cuerpo a Cuerpo %d",
   "restriction.levelz.defense.tooltip": "Defensa %d",
