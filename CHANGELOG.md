@@ -1,6 +1,6 @@
 ### Added:
 - 
 ### Fixed:
-- Fixed strange potion
+- Fixed emi error log
 ### Changed:
-- 
+- Tweaked AdditionZ fishing experience compat
