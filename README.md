@@ -3,6 +3,11 @@
 LevelZ-RPG-Series is a fork mod from [LevelZ](https://github.com/Globox1997/LevelZ) which adds skillables to the player which can get skilled to unlock blocks and strengthen passive
 skills. But is also add compat to the RPG-Series
 
+# IMPORTANT!!! IF YOU CRASH WITH SINIYTRA DOWNLOADED, MAKE SURE YOU USE THE CONNECTOR 12 VERSION!!!
+The last versions, 13 and 14 somehow mess up the compatibility :P
+
+# LevelZ
+
 ## What's new?
 
 The biggest difference is full compatibility with the official RPG series, dynamically 
